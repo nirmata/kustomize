@@ -1,0 +1,27 @@
+clusterPatches:
+- target:
+     kind: Cluster
+     labelSelector:
+         cluster-name: "cluster-001"
+  kustomizePatch: ./cluster-001/
+- target:
+     kind: Cluster
+     name: cluster-002
+  kustomizePatch: ./cluster-002/
+- target:
+     kind: Cluster
+     name: cluster-003
+     labelSelector:
+         cluster-type: eks 
+  kustomizePatch: ./cluster-003-eks/
+- target:
+     kind: Cluster
+     name: cluster-003
+     labelSelector:
+         cluster-type: aks 
+  kustomizePatch: ./cluster-003-aks/
+- target:
+     kind: Cluster
+     labelSelector:
+         cluster-type: "devtest"
+  kustomizePatch: ./devtest-clusters/
